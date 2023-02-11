@@ -1,0 +1,6 @@
+anatomy of an URL
+
+protocol - https/http 
+  |     domain     enpoint     path variable
+https://google.com/kickdinosaur/:id?size=1200
+                top level domain    query string
