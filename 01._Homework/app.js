@@ -21,7 +21,7 @@ app.get('/birds', (req, res) => {
 app.get('/birds/:name', (req, res) => {
     res.send(`<h1>Bird name: ${req.params.name}</h1>`)
 })
-//i am breaking the rest convention (birds2) just to write one more get endpoint
+//i am breaking the rest convention (birds2) just to write  more get endpoint
 app.get('/birds2', (req, res) => {
     res.send(`
         <h1 style='color:red'>Birds:</h1>
