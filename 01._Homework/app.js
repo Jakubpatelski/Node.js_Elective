@@ -5,7 +5,7 @@ const express = require("express")
 //This instance is used to configure and handle the incoming HTTP requests.
 const app = express()
 
-//This app starts a server and listens on port 3000 for connections. 
+// app.listen() starts a server and listens on port 3000 for connections. 
 app.listen(3000)
 
 let birds = ['cock-of-the-rock', 'cochoa', 'comet', 'condor', 'conebill', 'coot']
