@@ -5,8 +5,7 @@ const express = require("express")
 //This instance is used to configure and handle the incoming HTTP requests.
 const app = express()
 
-// app.listen() starts a server and listens on port 3000 for connections. 
-app.listen(3000)
+
 
 let birds = ['cock-of-the-rock', 'cochoa', 'comet', 'condor', 'conebill', 'coot']
 
@@ -33,3 +32,7 @@ app.get('/birds2', (req, res) => {
 app.get('/birds3', (req, res) => {
     res.send({ Bird: req.query.name})
 })
+
+// app.listen() starts a server and listens on port 3000 for connections(incoming requests). 
+//it should be after routes and middleware, best just place it at the end of the file
+app.listen(3000)
