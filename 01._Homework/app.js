@@ -17,6 +17,7 @@ app.get('/birds', (req, res) => {
 
 //GET endpoint at the path /birds/:name. The second argument will be executed when a client makes a GET request to this endpoint with a name parameter.
 //output Bird name: whataver
+//birds/comet
 app.get('/birds/:name', (req, res) => {
     res.send(`<h1>Bird name: ${req.params.name}</h1>`)
 })
@@ -26,4 +27,9 @@ app.get('/birds2', (req, res) => {
         <h1 style='color:red'>Birds:</h1>
         <br>
         <p>${birds}</p>`)
+})
+
+// /birds3?name=sth
+app.get('/birds3', (req, res) => {
+    res.send({ Bird: req.query.name})
 })
