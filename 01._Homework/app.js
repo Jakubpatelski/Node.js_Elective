@@ -7,26 +7,32 @@ const app = express()
 
 
 
-let birds = ['cock-of-the-rock', 'cochoa', 'comet', 'condor', 'conebill', 'coot']
+let birds = [
+        {id: 1, name: 'cock-of-the-rock'},
+        {id: 2, name: 'cochoa'},
+        {id:3, name: 'condor'}
+]
 
 //get enpoint at the path /birds will return all birds stored in birds array
 app.get('/birds', (req, res) => {
     res.send({ birds: birds })
 })
 
-//GET endpoint at the path /birds/:name. The second argument will be executed when a client makes a GET request to this endpoint with a name parameter.
-//output Bird name: whataver
-//birds/comet
-app.get('/birds/:name', (req, res) => {
-    res.send(`<h1>Bird name: ${req.params.name}</h1>`)
+
+//get bird by id, at the path /birds/1.
+//  The second argument will be executed when a client makes a GET request to this endpoint with a num parameter.
+app.get('/birds/:id', (req, res) => {
+    // The find() method returns the first element in the provided array that satisfies the provided testing function.
+    //  If no values satisfy the testing function, undefined is returned.
+    const bird = birds.find((bird) => bird.id == parseInt(req.params.id))
+    if(!bird){
+        res.status(404).send("No bird found")
+    } else {
+        res.send(bird)
+    }
 })
-//i am breaking the rest convention (birds2) just to write  more get endpoint
-app.get('/birds2', (req, res) => {
-    res.send(`
-        <h1 style='color:red'>Birds:</h1>
-        <br>
-        <p>${birds}</p>`)
-})
+
+
 
 // /birds3?name=sth
 app.get('/birds3', (req, res) => {
@@ -36,3 +42,4 @@ app.get('/birds3', (req, res) => {
 // app.listen() starts a server and listens on port 3000 for connections(incoming requests). 
 //it should be after routes and middleware, best just place it at the end of the file
 app.listen(3000)
+
