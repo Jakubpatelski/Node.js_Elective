@@ -7,6 +7,7 @@ const res = require('express/lib/response')
 // import { Express } from 'express';
 const express = require('express')
 const app = express()
+
 //middleware, every request that comes in will first go through this express json middleware
 //  which will convert the body to json
 // req -> middleware -> response

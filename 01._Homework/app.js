@@ -24,7 +24,7 @@ app.get('/birds', (req, res) => {
 app.get('/birds/:id', (req, res) => {
     // The find() method returns the first element in the provided array that satisfies the provided testing function.
     //  If no values satisfy the testing function, undefined is returned.
-    const bird = birds.find((bird) => bird.id === req.params.id)
+    const bird = birds.find((bird) => bird.id === Number(req.params.id))
     
     if(!bird){
         res.status(404).send("No bird found")
