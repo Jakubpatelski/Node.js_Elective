@@ -45,7 +45,8 @@ app.put('/birds/:id', (req, res) => {
     // checks whether the name variable extracted from the request body is truthy 
     // If it is truthy, it updates the name property of the bird object to the new value.
         if (name) bird.name = name;
-        res.send(`Bird with id: ${id} was updated`)
+        // res.send(`Bird with id: ${id} was updated`)
+        res.send({ birds: req.body });
         console.log(req.body)
     } else {
         res.send(`Something went wrong. Bird with id: ${id} wasn't updated`)
