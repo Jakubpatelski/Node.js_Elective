@@ -1,6 +1,13 @@
 HTTP Endpoint
 GET /birds(plural as it matches the collection(mysql collection)- table)
+GET /birds/<id>
+POST /birds
+PATCH /birds/<id>
+DELETE /birds/<id>
+put - replace entire resource
+patch - repace element resource
 
 
+you shouldn't reuse the id so if one id deleted you shouldnt use it
 
 

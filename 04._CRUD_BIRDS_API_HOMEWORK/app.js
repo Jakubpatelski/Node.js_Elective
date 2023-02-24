@@ -64,7 +64,7 @@ app.delete('/birds/:id', (req,res) => {
         console.log(birds)
         res.send(`Bird with id: ${id} succesfully deleted`)
     } else {
-        console.log((`Something went wrong. Bird with id: ${req.params.id} wasn't deleted`))
+        res.status(404).send((`Something went wrong. Bird with id: ${req.params.id} wasn't deleted`))
     } 
 
 })
