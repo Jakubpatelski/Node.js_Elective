@@ -1,0 +1,38 @@
+{
+  "name": "upper",
+  "version": "0.0.1",
+  "description": "Motivation app with jokes, quotes and daily commands",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cross-dev": "cross-env PORT=9090 ENV=DEV nodemon app.js",
+    "cross-prod": "cross-env PORT=80 app.js",
+    "dev": "PORT=8080 nodemon app.js",
+    "prod": "PORT=80 node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakubpatelski/Node.js_Elective.git"
+  },
+  "keywords": [
+    "motivation",
+    "jokes",
+    "daily",
+    "commands",
+    "upper"
+  ],
+  "author": "Jakub Patelski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jakubpatelski/Node.js_Elective/issues"
+  },
+  "homepage": "https://github.com/Jakubpatelski/Node.js_Elective#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sentiment": "^5.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

@@ -8,7 +8,7 @@ async function fetchTanks(){
 
     const tanksWrapper = document.getElementById('tanks-wrapper')
 
-    data.tanks.forEach(tank => {
+    data.data.forEach(tank => {
         // XSS (never use innerHTML)
         // senetation
         const tankDiv = document.createElement('div')
@@ -30,5 +30,6 @@ async function fetchTanks(){
 }
 
 fetchTanks()
+
 
 

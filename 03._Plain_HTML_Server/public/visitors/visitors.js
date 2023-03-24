@@ -19,6 +19,7 @@ function incrementVisitorCount() {
         .then(response => response.json())
         .then(result => document.getElementById("visitor-count").innerText = result.data);
 }
+
 // //this fetch number of click when we start the app
 // fetch("/api/visitors")
 // .then(response => response.json())
