@@ -4,6 +4,7 @@ const app = express();
 import path from "path";
 
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }))
 
 import templateEngine from "./util/templateEngine.js";
 
@@ -16,6 +17,11 @@ const IRLQuests = templateEngine.readPage("./public/pages/IRLQuests/IRLQuests.ht
 const IRLQuestsPage = templateEngine.renderPage(IRLQuests, {
     tabTitle: "Upper | IRLQuests"
 });
+
+const contact =  templateEngine.readPage("./public/pages/contact/contact.html")
+const contactPage = templateEngine.renderPage(contact, {
+    tabTitle: "Upper | Contact"
+})
 
 
 app.get("/", (req, res) => {
@@ -31,6 +37,16 @@ app.get("/jokes", async (req, res) => {
     res.send(jokesPage);    
 });
 
+app.get("/contact", (req,res) => {
+    res.send(contactPage)
+})
+
+// Api
+app.post("/api/contact", (req, res) => {
+    console.log(req.body);
+
+    res.send(req.body)
+})
 
 
 console.log(process.env.PORT);
