@@ -26,10 +26,12 @@ app.get('/tanks', (req, res) => {
     res.sendFile(__dirname + '/public/tanks/tanks.html')
 })
 
+import visitorsRouter from './routers/visitorsRouter.js'
+app.use(visitorsRouter)
 
-app.get('/visitors', (req, res) => {
-    res.sendFile(__dirname + '/public/visitors/visitors.html')
-})
+// app.get('/visitors', (req, res) => {
+//     res.sendFile(__dirname + '/public/visitors/visitors.html')
+// })
 
 
 
@@ -38,6 +40,7 @@ app.get('/guards', (req, res) => {
 })
 
 // API
+
 app.get('/api/visitors', (req,res) => {
     res.send({ data: visitorCount })
 })
